@@ -1,0 +1,102 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["main", "master"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # Poskusi Vite build; če ni potreben (monolitni index.html že deluje samostojno),
+      # samo pripravi dist iz korena.
+      - name: Install deps (če obstaja package.json)
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+          fi
+
+      - name: Build and validate
+        run: |
+          if [ -f package.json ] && npm run | grep -q " build"; then
+            npm run build
+            npm run build:check
+            npm run lint
+            npm test
+          else
+            echo "ni build skripte — preskoči"
+          fi
+
+      # Objavi samo preverjen Vite artefakt.
+      - name: Prepare artifact
+        run: |
+          if [ -d dist ] && [ -f dist/index.html ]; then
+            echo "Uporabljam dist/ (Vite build)"
+            # Zagotovi da so statični fajli v dist (Vite jih že kopira če so v public/ ali importani)
+            # Korenski monolit uporablja te statične datoteke.
+            for f in manifest.json sw.js icon-192.png icon-512.png apple-touch-icon.png og-image.png qrcode.min.js 404.html sitemap.xml robots.txt; do
+              test -f "$f"
+              cp "$f" dist/
+            done
+            mkdir -p dist/assets
+            cp icon-192.png icon-512.png apple-touch-icon.png dist/assets/ 2>/dev/null || true
+            if [ -d assets ]; then
+              cp -r assets/. dist/assets/
+            fi
+            if [ -d public/fonts ]; then
+              mkdir -p dist/fonts
+              cp -r public/fonts/. dist/fonts/
+            fi
+            echo "dist vsebina:"
+            ls -lh dist | head -n 30
+          else
+            echo "Uporabljam koren (statični deploy brez builda)"
+            mkdir -p _site
+            cp -r index.html manifest.json sw.js icon-*.png apple-touch-icon.png og-image.png qrcode.min.js sitemap.xml robots.txt 404.html .nojekyll _site/ 2>/dev/null || true
+            if [ -d public/fonts ]; then
+              mkdir -p _site/fonts
+              cp -r public/fonts/. _site/fonts/
+            fi
+            # Pretvori _site v dist za enoten upload
+            rm -rf dist && mv _site dist
+          fi
+          # .nojekyll mora biti v root artifacta
+          touch dist/.nojekyll
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

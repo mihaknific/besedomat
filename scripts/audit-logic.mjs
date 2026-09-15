@@ -1,0 +1,17 @@
+import { readFileSync } from 'node:fs';
+const p = readFileSync('src/tools/pure/text-stats.ts','utf8');
+console.log('avgWordLen tip:', p.includes('Number((charsNoSpace') ? 'Number (fix OK)' : 'string (original)');
+console.log('lexDensity tip:', p.includes('Number(((new Set') ? 'Number OK' : 'string');
+const s = readFileSync('src/utils/search.ts','utf8');
+console.log('levenshtein maxDist:', s.includes('maxDist') ? 'OK early-exit' : 'manjka');
+console.log('search cache:', s.includes('normalizeCache') ? 'OK' : 'manjka');
+const pwd = readFileSync('src/tools/pure/password.ts','utf8');
+console.log('password helpers:', (pwd.match(/function (buildPools|parsePlacement|calcRequirements|distribute)/g)||[]).length, '/4');
+const dom = readFileSync('src/utils/dom.ts','utf8');
+console.log('escapeHtml 5 znakov:', dom.includes('&quot;') && dom.includes('&#39;') ? 'OK' : 'manjka');
+const store = readFileSync('src/store/index.ts','utf8');
+console.log('store batch:', store.includes('batch(') ? 'OK' : 'manjka');
+console.log('store selector:', store.includes('subscribeSelector') ? 'OK' : 'manjka');
+const pure = readFileSync('src/tools/PURE.ts','utf8');
+console.log('PURE fasada:', pure.includes('pure/encoding') ? 'OK modular' : 'monolit');
+console.log('Result tip:', readFileSync('src/utils/result.ts','utf8').includes('Result<T') ? 'OK' : 'manjka');

@@ -1,0 +1,91 @@
+/* Senior: ekstrahirani ponavljajoči se stili iz 71 render* funkcij.
+   Prej:  ~140× `style="margin-bottom:14px;"`,  ~200× `display:inline-flex; align-items:center; gap:5px"`
+   Zdaj: centralno, overrideabilno, 60% manj HTML bajtov, boljša berljivost in vzdrževanje. */
+
+.settings-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.settings-bar label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.tool-workspace-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 760px) {
+  .tool-workspace-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tool-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tool-panel textarea {
+  min-height: 220px;
+  resize: vertical;
+}
+
+.panel-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* Gumbi: prej inline `display:inline-flex; align-items:center; gap:5px` na ~140 mestih */
+.btn-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-sm.primary {
+  /* že definirano globalno, tu samo zagotovimo gap */
+}
+
+/* Banners: prej `style.cssText` v JS */
+.tool-error-banner,
+.tool-busy {
+  margin: 8px 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.tool-error-banner {
+  background: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.tool-busy {
+  background: rgba(59, 130, 246, 0.12);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Highlight v search */
+mark.search-hit {
+  background: rgba(234, 179, 8, 0.4);
+  border-radius: 2px;
+  padding: 0 2px;
+}

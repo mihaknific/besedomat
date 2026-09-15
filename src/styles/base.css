@@ -1,0 +1,67 @@
+/* Senior: baza — reset, tipografija, layout. Prej 300 vrstic razpršenih v index.html <style>. */
+* {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'Wizpen';
+  src: url('/fonts/wizpen.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PigpenCipher';
+  src: url('/fonts/PigpenCipher.otf') format('opentype');
+  font-display: swap;
+}
+.pigpen-glyph {
+  display: inline-block;
+  margin: 0 0.08em;
+  vertical-align: middle;
+  font-family: 'Wizpen', sans-serif;
+  font-size: 1.35em;
+  line-height: 1;
+}
+.pigpen-glyph.compact {
+  font-size: 1.15em;
+  letter-spacing: 0;
+}
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+a {
+  color: var(--violet);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+textarea,
+input,
+select {
+  font: inherit;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+}
+textarea:focus,
+input:focus,
+select:focus {
+  outline: 2px solid var(--violet);
+  border-color: transparent;
+}

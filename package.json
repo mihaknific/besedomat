@@ -1,0 +1,37 @@
+{
+  "name": "besedomat",
+  "version": "1.0.0",
+  "description": "Brezplačna orodjarna za besedilo - Text toolkit",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:single": "vite build --config vite.single.config.ts",
+    "build:check": "tsc --noEmit",
+    "preview": "vite preview",
+    "lint": "node --max-old-space-size=4096 ./node_modules/eslint/bin/eslint.js src --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css,html,json}\"",
+    "test": "node tests/run-tests.mjs",
+    "test:watch": "node --watch tests/run-tests.mjs",
+    "check:jsdoc": "node scripts/check-jsdoc.mjs",
+    "sync:check": "node scripts/sync-check.mjs",
+    "bundle:analyze": "vite build --mode analyze || echo \"dodaj rollup-plugin-visualizer za graf\""
+  },
+  "dependencies": {
+    "qrcode": "^1.5.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^8.57.0",
+    "@types/qrcode": "^1.5.5",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.0",
+    "prettier": "^3.2.0",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^7.18.0",
+    "vite": "^8.2.2",
+    "vite-plugin-pwa": "^1.3.0",
+    "vite-plugin-singlefile": "^2.3.3"
+  }
+}
