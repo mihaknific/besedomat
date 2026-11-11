@@ -1426,46 +1426,9 @@ footer {
   transform: scale(1.12);
 }
 
-.support-btn.bmc:hover {
-  background: rgba(255, 221, 0, 0.14);
-  border-color: #ffdd00;
-  color: #b58100;
-}
-
-:root[data-theme='dark'] .support-btn.bmc:hover,
-:root[data-theme='cyber'] .support-btn.bmc:hover,
-:root[data-theme='ocean'] .support-btn.bmc:hover,
-:root[data-theme='midnight'] .support-btn.bmc:hover,
-:root[data-theme='mono-dark'] .support-btn.bmc:hover {
-  color: #ffe033;
-}
-
-.support-btn.kofi:hover {
-  background: rgba(41, 171, 224, 0.14);
-  border-color: #29abe0;
-  color: #0284c7;
-}
-
-:root[data-theme='dark'] .support-btn.kofi:hover,
-:root[data-theme='cyber'] .support-btn.kofi:hover,
-:root[data-theme='ocean'] .support-btn.kofi:hover,
-:root[data-theme='midnight'] .support-btn.kofi:hover,
-:root[data-theme='mono-dark'] .support-btn.kofi:hover {
-  color: #38bdf8;
-}
-
-.support-btn.patreon:hover {
-  background: rgba(255, 66, 77, 0.14);
-  border-color: #ff424d;
-  color: #e11d48;
-}
-
-:root[data-theme='dark'] .support-btn.patreon:hover,
-:root[data-theme='cyber'] .support-btn.patreon:hover,
-:root[data-theme='ocean'] .support-btn.patreon:hover,
-:root[data-theme='midnight'] .support-btn.patreon:hover,
-:root[data-theme='mono-dark'] .support-btn.patreon:hover {
-  color: #ff6b75;
+.support-btn.portfolio:hover {
+  border-color: var(--text-dimmer);
+  transform: translateY(-1px);
 }
 
 .footer-divider {

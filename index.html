@@ -1524,46 +1524,9 @@
       transform: scale(1.12);
     }
 
-    .support-btn.bmc:hover {
-      background: rgba(255, 221, 0, 0.14);
-      border-color: #FFDD00;
-      color: #b58100;
-    }
-
-    :root[data-theme="dark"] .support-btn.bmc:hover,
-    :root[data-theme="cyber"] .support-btn.bmc:hover,
-    :root[data-theme="ocean"] .support-btn.bmc:hover,
-    :root[data-theme="midnight"] .support-btn.bmc:hover,
-    :root[data-theme="mono-dark"] .support-btn.bmc:hover {
-      color: #ffe033;
-    }
-
-    .support-btn.kofi:hover {
-      background: rgba(41, 171, 224, 0.14);
-      border-color: #29abe0;
-      color: #0284c7;
-    }
-
-    :root[data-theme="dark"] .support-btn.kofi:hover,
-    :root[data-theme="cyber"] .support-btn.kofi:hover,
-    :root[data-theme="ocean"] .support-btn.kofi:hover,
-    :root[data-theme="midnight"] .support-btn.kofi:hover,
-    :root[data-theme="mono-dark"] .support-btn.kofi:hover {
-      color: #38bdf8;
-    }
-
-    .support-btn.patreon:hover {
-      background: rgba(255, 66, 77, 0.14);
-      border-color: #FF424D;
-      color: #e11d48;
-    }
-
-    :root[data-theme="dark"] .support-btn.patreon:hover,
-    :root[data-theme="cyber"] .support-btn.patreon:hover,
-    :root[data-theme="ocean"] .support-btn.patreon:hover,
-    :root[data-theme="midnight"] .support-btn.patreon:hover,
-    :root[data-theme="mono-dark"] .support-btn.patreon:hover {
-      color: #ff6b75;
+    .support-btn.portfolio:hover {
+      border-color: var(--text-dimmer);
+      transform: translateY(-1px);
     }
 
     .footer-divider {
@@ -3337,24 +3300,9 @@
       <div class="footer-support-section">
         <div class="support-label" data-i18n="foo_support_label">Podpri moje delo in razvoj</div>
         <div class="support-buttons">
-          <a href="https://buymeacoffee.com/mihaknific" target="_blank" rel="noopener noreferrer" class="support-btn bmc" title="Buy Me a Coffee" aria-label="Buy Me a Coffee">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 39" fill="currentColor" aria-hidden="true">
-              <path d="M14.3206 17.9122C12.9282 18.5083 11.3481 19.1842 9.30013 19.1842C8.44341 19.1824 7.59085 19.0649 6.76562 18.8347L8.18203 33.3768C8.23216 33.9847 8.50906 34.5514 8.95772 34.9645C9.40638 35.3776 9.994 35.6069 10.6039 35.6068C10.6039 35.6068 12.6122 35.7111 13.2823 35.7111C14.0036 35.7111 16.1662 35.6068 16.1662 35.6068C16.776 35.6068 17.3635 35.3774 17.8121 34.9643C18.2606 34.5512 18.5374 33.9846 18.5876 33.3768L20.1046 17.3073C19.4267 17.0757 18.7425 16.9219 17.9712 16.9219C16.6372 16.9214 15.5623 17.3808 14.3206 17.9122Z"></path>
-              <path d="M26.6584 10.3609L26.4451 9.28509C26.2537 8.31979 25.8193 7.40768 24.8285 7.05879C24.5109 6.94719 24.1505 6.89922 23.907 6.66819C23.6634 6.43716 23.5915 6.07837 23.5351 5.74565C23.4308 5.13497 23.3328 4.52377 23.2259 3.91413C23.1336 3.39002 23.0606 2.80125 22.8202 2.32042C22.5073 1.6748 21.858 1.29723 21.2124 1.04743C20.8815 0.923938 20.5439 0.819467 20.2012 0.734533C18.5882 0.308987 16.8922 0.152536 15.2328 0.0633591C13.241 -0.046547 11.244 -0.0134338 9.25692 0.162444C7.77794 0.296992 6.22021 0.459701 4.81476 0.971295C4.30108 1.15851 3.77175 1.38328 3.38115 1.78015C2.90189 2.26775 2.74544 3.02184 3.09537 3.62991C3.34412 4.06172 3.7655 4.3668 4.21242 4.56862C4.79457 4.82867 5.40253 5.02654 6.02621 5.15896C7.76282 5.54279 9.56148 5.6935 11.3356 5.75765C13.302 5.83701 15.2716 5.77269 17.2286 5.56521C17.2286 5.56521 17.2286 5.56521 17.2286 5.56521Z"></path>
-            </svg>
-            <span>Buy Me a Coffee</span>
-          </a>
-          <a href="https://ko-fi.com/mihaknific" target="_blank" rel="noopener noreferrer" class="support-btn kofi" title="Ko-fi" aria-label="Ko-fi">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311zm6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015z" />
-            </svg>
-            <span>Ko-fi</span>
-          </a>
-          <a href="https://www.patreon.com/cw/MihaKnific" target="_blank" rel="noopener noreferrer" class="support-btn patreon" title="Patreon" aria-label="Patreon">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M0 .48v23.04h4.22V.48zm15.385 0c-4.764 0-8.641 3.88-8.641 8.65 0 4.755 3.877 8.636 8.641 8.636 4.75 0 8.615-3.881 8.615-8.637 0-4.77-3.865-8.649-8.615-8.649z" />
-            </svg>
-            <span>Patreon</span>
+          <a href="https://mihaknific.github.io/podpora.html" target="_blank" rel="noopener noreferrer"
+            class="support-btn portfolio">
+            <span data-i18n="foo_support_cta">Podpri moje delo</span>
           </a>
         </div>
       </div>
@@ -3421,6 +3369,7 @@
         recent_title: "Nedavno uporabljena", recent_desc: "Orodja, ki ste jih zadnje odpirali",
         fav_emp_t: "Ni priljubljenih orodij", fav_emp_d: "Kliknite zvezdico na kartici orodja in se bo prikazalo tukaj.", fav_emp_b: "Prebrskaj orodja",
         foo_support_label: "Podpri moje delo in razvoj",
+        foo_support_cta: "Podpri moje delo",
         foo_priv: "Pravilnik o zasebnosti", foo_term: "Pogoji uporabe", foo_about: "O Besedomatu",
         foo_rights: "Vse pravice pridržane.",
         drawer_settings: "Nastavitve", drawer_lang: "Jezik", drawer_theme: "Tema", drawer_font: "Velikost pisave", drawer_wrap: "Prelom vrstic", drawer_theme_title: "Izberi temo",
@@ -3450,6 +3399,7 @@
         recent_title: "Recently used", recent_desc: "Tools you opened most recently",
         fav_emp_t: "Nothing pinned yet", fav_emp_d: "Tap the star on any tool card and it will show up here.", fav_emp_b: "Browse Tools",
         foo_support_label: "Support My Work & Development",
+        foo_support_cta: "Support my work",
         foo_priv: "Privacy Policy", foo_term: "Terms of Service", foo_about: "About Besedomat",
         foo_rights: "All rights reserved.",
         drawer_settings: "Settings", drawer_lang: "Language", drawer_theme: "Theme", drawer_font: "Font size", drawer_wrap: "Word wrap", drawer_theme_title: "Choose theme",
@@ -3479,6 +3429,7 @@
         recent_title: "Zuletzt genutzt", recent_desc: "Tools, die du zuletzt geöffnet hast",
         fav_emp_t: "Noch nichts angeheftet", fav_emp_d: "Klicke den Stern auf einer Tool-Karte, dann erscheint es hier.", fav_emp_b: "Tools durchsuchen",
         foo_support_label: "Unterstütze meine Arbeit & Entwicklung",
+        foo_support_cta: "Unterstütze meine Arbeit",
         foo_priv: "Datenschutz", foo_term: "Nutzungsbedingungen", foo_about: "Über Besedomat",
         foo_rights: "Alle Rechte vorbehalten.",
         drawer_settings: "Einstellungen", drawer_lang: "Sprache", drawer_theme: "Design", drawer_font: "Schriftgröße", drawer_wrap: "Zeilenumbruch", drawer_theme_title: "Design wählen",

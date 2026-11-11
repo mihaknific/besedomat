@@ -3,7 +3,7 @@
    OBVEZNO: povečaj številko (besedomat-vX) ob vsaki spremembi index.html,
    sicer uporabniki ostanejo na stari (cached) verziji! */ 
 
-const CACHE_NAME = "besedomat-v12";
+const CACHE_NAME = "besedomat-v13";
 
 const ASSETS = [
   "./",

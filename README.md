@@ -169,4 +169,4 @@ Potem:
 
 Avtor: Miha Knific.
 Aplikacija je namenjena lokalni, zasebni uporabi. 
-Podpora: Buy Me a Coffee / Ko-fi / Patreon.
+Vse možnosti podpore so zbrane na [strani za podporo](https://mihaknific.github.io/podpora.html).
